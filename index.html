@@ -34,8 +34,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
+            //Caminho para url da api do github seguido do nome do login
             const endpoint = `https://api.github.com/users/diasbrunodev`;
 
+            //pega os elementos html onde serão inseridos os dados trazidos da api
             const name = document.getElementById('name');
             const username = document.getElementById('username');
             const avatar = document.getElementById('avatar');
@@ -44,6 +46,7 @@
             const following = document.getElementById('following');
             const link = document.getElementById('link');
 
+            //pega o endereço da api(endpoint), e pelo fetch e pelo json que está na função, recebe as propriedades, escrevendo ou inserindo dados trazidos pela api no html
             fetch(endpoint)
                 .then(function(e) {
                     return e.json();
