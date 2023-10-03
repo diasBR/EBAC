@@ -31,37 +31,6 @@
         </div>
     </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            //Caminho para url da api do github seguido do nome do login
-            const endpoint = `https://api.github.com/users/diasbrunodev`;
-
-            //pega os elementos html onde serão inseridos os dados trazidos da api
-            const name = document.getElementById('name');
-            const username = document.getElementById('username');
-            const avatar = document.getElementById('avatar');
-            const repository = document.getElementById('repository');
-            const followers = document.getElementById('followers');
-            const following = document.getElementById('following');
-            const link = document.getElementById('link');
-
-            //pega o endereço da api(endpoint), e pelo fetch e pelo json que está na função, recebe as propriedades, escrevendo ou inserindo dados trazidos pela api no html
-            fetch(endpoint)
-                .then(function(e) {
-                    return e.json();
-                })
-                .then(function(json) {
-                    name.innerHTML = json.name;
-                    username.innerHTML = json.login;
-                    avatar.src = json.avatar_url;
-                    followers.innerHTML = json.followers;
-                    following.innerHTML = json.following;
-                    repository.innerHTML = json.public_repos;
-                    link.href = json.html_url;
-                })
-            
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
